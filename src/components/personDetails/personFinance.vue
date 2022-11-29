@@ -16,24 +16,46 @@
             <h2>{{financeDetails.salary}}</h2>
         </div>
     </div>
-    <div v-if="financeDetails.loan.hasLoan" class="loan-data-container">
-        <div class="loan-details">
-            <div class="data-holder">
-                <h4>Loan Amount</h4>
-                <h2>{{financeDetails.loan.loanAmount}}</h2>
-            </div>
-            <div class="data-holder">
-                <h4>Left To Pay</h4>
-                <h2>{{financeDetails.loan.leftToPay}}</h2>
-            </div>
-            <div class="data-holder">
-                <h4>Date Taken</h4>
-                <h2>{{financeDetails.loan.dateTaken}}</h2>
-            </div>
-            <div class="data-holder">
-                <h4>Last Day To Pay</h4>
-                <h2>{{financeDetails.loan.lastDayToPay}}</h2>
-            </div>
+    <div v-if="!financeDetails.loan.hasLoan" class="data-container">
+        <div class="title-holder">
+            <h4>Has Loan</h4>
+        </div>
+        <div class="data-holder">
+            <h2>{{financeDetails.loan.hasLoan}}</h2>
+        </div>
+    </div>
+</div>
+<div v-if="financeDetails.loan.hasLoan" class="loan-details-container">
+    <div class="data-container">
+        <div class="title-holder">
+            <h4>Loan Amount</h4>
+        </div>
+        <div class="data-holder">
+            <h2>{{financeDetails.loan.loanAmount}}</h2>
+        </div>
+    </div>
+    <div class="data-container">
+        <div class="title-holder">
+            <h4>Left To Pay</h4>
+        </div>
+        <div class="data-holder">
+            <h2>{{financeDetails.loan.leftToPay}}</h2>
+        </div>
+    </div>
+    <div class="data-container">
+        <div class="title-holder">
+            <h4>Date Taken</h4>
+        </div>
+        <div class="data-holder">
+            <h2>{{financeDetails.loan.dateTaken}}</h2>
+        </div>
+    </div>
+    <div class="data-container">
+        <div class="title-holder">
+            <h4>Last Day To Pay</h4>
+        </div>
+        <div class="data-holder">
+            <h2>{{financeDetails.loan.lastDayToPay}}</h2>
         </div>
     </div>
 </div>

@@ -14,6 +14,10 @@
         <appearance :appearanceDetails="person.appearance"/>
         <h2>Finance</h2>
         <finance :financeDetails="person.finance"/>
+        <h2>Professional</h2>
+        <professional :professionalDetails="person.professional"/>
+        <h2>Internet Preferences</h2>
+        <internetPreferences :internetPreferencesDetails="person.internetPreferences"/>
     </div>
 </template>
 
@@ -26,6 +30,8 @@ import personalStatus from './personDetails/personPersonalStatus.vue'
 import location from './personDetails/personLocation.vue'
 import appearance from './personDetails/personAppearance.vue'
 import finance from './personDetails/personFinance.vue'
+import professional from './personDetails/personProfessional.vue'
+import internetPreferences from './personDetails/personInternetPreferences.vue'
 export default {
     data(){
         return{
@@ -51,6 +57,8 @@ export default {
         location,
         appearance,
         finance,
+        professional,
+        internetPreferences,
     }
 }
 </script>

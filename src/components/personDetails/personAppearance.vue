@@ -10,7 +10,7 @@
     </div>
     <div class="data-container">
         <div class="title-holder">
-            <h4>Weigth</h4>
+            <h4>Weight</h4>
         </div>
         <div class="data-holder">
             <h2>{{appearanceDetails.weigth}}</h2>
@@ -18,7 +18,7 @@
     </div>
     <div class="data-container">
         <div class="title-holder">
-            <h4>Heigth</h4>
+            <h4>Height</h4>
         </div>
         <div class="data-holder">
             <h2>{{appearanceDetails.heigth}}</h2>
