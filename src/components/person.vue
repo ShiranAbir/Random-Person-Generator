@@ -18,6 +18,10 @@
         <professional :professionalDetails="person.professional"/>
         <h2>Internet Preferences</h2>
         <internetPreferences :internetPreferencesDetails="person.internetPreferences"/>
+        <h2>Driving Details</h2>
+        <drivingDetails :drivingDetails="person.drivingDetails"/>
+        <h2>Facebook User Details</h2>
+        <facebookUserDetails :facebookUserDetails="person.facebookUserDetails"/>
     </div>
 </template>
 
@@ -32,6 +36,8 @@ import appearance from './personDetails/personAppearance.vue'
 import finance from './personDetails/personFinance.vue'
 import professional from './personDetails/personProfessional.vue'
 import internetPreferences from './personDetails/personInternetPreferences.vue'
+import drivingDetails from './personDetails/personDrivingDetails.vue'
+import facebookUserDetails from './personDetails/personFacebookUserDetails.vue'
 export default {
     data(){
         return{
@@ -59,6 +65,8 @@ export default {
         finance,
         professional,
         internetPreferences,
+        drivingDetails,
+        facebookUserDetails,
     }
 }
 </script>

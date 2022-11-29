@@ -274,26 +274,27 @@
 .loan-details-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 6px;
     background-color: #dce9ed;
-    height: 200px;
 
     .data-container {
         margin: auto;
+        margin: 5px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         padding: 20px;
-        min-width: 170px;
-        height: 150px;
+        min-width: 150px;
+        min-height: 150px;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         background-color: #201f1f;
         color: #dce9ed;
         border-radius: 6px;
         text-align: center;
+        flex-grow: 1;
 
         .data-holder {
             margin: auto;
@@ -369,7 +370,64 @@
     }
 }
 
+.driving-details-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    background-color: #dce9ed;
+    
+
+
+    .data-container {
+        margin: auto;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 20px;
+        min-width: 150px;
+        min-height: 150px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        background-color: #201f1f;
+        color: #dce9ed;
+        border-radius: 6px;
+        text-align: center;
+        flex-grow: 1;
+    }
+}
+
 .internet-preferences-details-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    background-color: #dce9ed;
+    
+
+
+    .data-container {
+        margin: auto;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 20px;
+        min-width: 150px;
+        min-height: 150px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        background-color: #201f1f;
+        color: #dce9ed;
+        border-radius: 6px;
+        text-align: center;
+        flex-grow: 1;
+    }
+}
+.facebook-user-details-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
