@@ -2,26 +2,59 @@
     <appHeader :person="this.person" @getRandomPerson="getRandomPerson"/>
     <div class="person-container">
         <names :names="this.person.names"/>
-        <h2>Personal Details</h2>
-        <personalDetails :personalDetails="person.personalDetails[0]"/>
-        <h2>Contact Details</h2>
-        <contactDetails :contactDetails="person.personalDetails[1]"/>
-        <h2>Personal Status</h2>
-        <personalStatus :personalStatus="person.personalStatus"/>
-        <h2>Location</h2>
-        <location :locationDetails="person.location"/>
-        <h2>Appearance</h2>
-        <appearance :appearanceDetails="person.appearance"/>
-        <h2>Finance</h2>
-        <finance :financeDetails="person.finance"/>
-        <h2>Professional</h2>
-        <professional :professionalDetails="person.professional"/>
-        <h2>Internet Preferences</h2>
-        <internetPreferences :internetPreferencesDetails="person.internetPreferences"/>
-        <h2>Driving Details</h2>
-        <drivingDetails :drivingDetails="person.drivingDetails"/>
-        <h2>Facebook User Details</h2>
-        <facebookUserDetails :facebookUserDetails="person.facebookUserDetails"/>
+        <div class="section-holder">
+            <h2 @click="toggleSection('personalDetails')">Personal Details</h2>
+            <personalDetails v-if="this.sectionShown.personalDetails" :personalDetails="person.personalDetails[0]"/>
+        </div>
+        <div class="section-holder">
+            <h2 @click="toggleSection('contactDetails')" >Contact Details</h2>
+            <contactDetails v-if="this.sectionShown.contactDetails" :contactDetails="person.personalDetails[1]"/>
+        </div>
+        <div class="section-holder">
+            <h2 @click="toggleSection('personalStatus')">Personal Status</h2>
+            <personalStatus v-if="this.sectionShown.personalStatus" :personalStatus="person.personalStatus"/>
+        </div>
+        <div class="section-holder">
+            <h2 @click="toggleSection('location')">Location</h2>
+            <location v-if="this.sectionShown.location" :locationDetails="person.location"/>
+        </div>
+        <div class="section-holder">
+            <h2 @click="toggleSection('appearance')">Appearance</h2>
+            <appearance v-if="this.sectionShown.appearance" :appearanceDetails="person.appearance"/>
+        </div>
+        <div class="section-holder">
+            <h2 @click="toggleSection('finance')">Finance</h2>
+            <finance v-if="this.sectionShown.finance" :financeDetails="person.finance"/>
+        </div>
+        <div class="section-holder">
+            <h2 @click="toggleSection('professional')">Professional</h2>
+            <professional v-if="this.sectionShown.professional" :professionalDetails="person.professional"/>
+        </div>
+        <div class="section-holder">
+            <h2 @click="toggleSection('internetPreferences')">Internet Preferences</h2>
+            <internetPreferences v-if="this.sectionShown.internetPreferences" :internetPreferencesDetails="person.internetPreferences"/>
+        </div>
+        <div class="section-holder">
+            <h2 @click="toggleSection('drivingDetails')">Driving Details</h2>
+            <drivingDetails v-if="this.sectionShown.drivingDetails" :drivingDetails="person.drivingDetails"/>
+        </div>
+        <div class="section-holder">
+            <h2 @click="toggleSection('facebookUserDetails')">Facebook User Details</h2>
+            <facebookUserDetails v-if="this.sectionShown.facebookUserDetails" :facebookUserDetails="person.facebookUserDetails"/>
+        </div>
+        <div class="section-holder">
+            <h2 @click="toggleSection('twiterUserDetails')">Twitter User Details</h2>
+            <twiterUserDetails v-if="this.sectionShown.twiterUserDetails" :twitterUserDetails="person.twitterUserDetails"/>
+        </div>
+        <div class="section-holder">
+            <h2 @click="toggleSection('instagramUserDetails')">Instagram User Details</h2>
+            <instagramUserDetails v-if="this.sectionShown.instagramUserDetails" :instagramUserDetails="person.instagramUserDetails"/>
+        </div>
+        <div class="section-holder">
+            <h2 @click="toggleSection('linkedinUserDetails')">Linkedin User Details</h2>
+            <linkedinUserDetails v-if="this.sectionShown.linkedinUserDetails" :linkedinUserDetails="person.linkedinUserDetails"/>
+        </div>
+        
     </div>
 </template>
 
@@ -38,10 +71,30 @@ import professional from './personDetails/personProfessional.vue'
 import internetPreferences from './personDetails/personInternetPreferences.vue'
 import drivingDetails from './personDetails/personDrivingDetails.vue'
 import facebookUserDetails from './personDetails/personFacebookUserDetails.vue'
+import twiterUserDetails from './personDetails/personTwiterUserDetails.vue'
+import instagramUserDetails from './personDetails/personInstagramUserDetails.vue'
+import linkedinUserDetails from './personDetails/personLinkedinUserDetails.vue'
 export default {
     data(){
         return{
             person: null,
+            sectionShown:{
+                names:false,
+                appHeader:false,
+                personalDetails:false,
+                contactDetails:false,
+                personalStatus:false,
+                location:false,
+                appearance:false,
+                finance:false,
+                professional:false,
+                internetPreferences:false,
+                drivingDetails:false,
+                facebookUserDetails:false,
+                twiterUserDetails:false,
+                instagramUserDetails:false,
+                linkedinUserDetails:false,
+            },
         }
     },
     created(){
@@ -52,6 +105,9 @@ export default {
         getRandomPerson(){
             this.$store.dispatch({ type: 'loadPerson' })
             this.person = this.$store.getters.person
+        },
+        toggleSection(sectionName){
+            this.sectionShown[sectionName] = !this.sectionShown[sectionName]
         }
     },
     components:{
@@ -67,6 +123,9 @@ export default {
         internetPreferences,
         drivingDetails,
         facebookUserDetails,
+        twiterUserDetails,
+        instagramUserDetails,
+        linkedinUserDetails,
     }
 }
 </script>
