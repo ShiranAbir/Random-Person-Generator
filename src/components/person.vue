@@ -1,5 +1,5 @@
 <template>
-    <appHeader :person="this.person" @getRandomPerson="getRandomPerson"/>
+    <appHeader @saveRandomPerson="saveRandomPerson" :person="this.person" @getRandomPerson="getRandomPerson"/>
     <div class="person-container">
         <names :names="this.person.names"/>
         <div class="section-holder">
@@ -54,8 +54,8 @@
             <h2 @click="toggleSection('linkedinUserDetails')">Linkedin User Details</h2>
             <linkedinUserDetails v-if="this.sectionShown.linkedinUserDetails" :linkedinUserDetails="person.linkedinUserDetails"/>
         </div>
-        
     </div>
+    <appfooter/>
 </template>
 
 <script>
@@ -74,6 +74,7 @@ import facebookUserDetails from './personDetails/personFacebookUserDetails.vue'
 import twiterUserDetails from './personDetails/personTwiterUserDetails.vue'
 import instagramUserDetails from './personDetails/personInstagramUserDetails.vue'
 import linkedinUserDetails from './personDetails/personLinkedinUserDetails.vue'
+import appfooter from './footer.vue'
 export default {
     data(){
         return{
@@ -108,6 +109,9 @@ export default {
         },
         toggleSection(sectionName){
             this.sectionShown[sectionName] = !this.sectionShown[sectionName]
+        },
+        saveRandomPerson(){
+            console.log('here!');
         }
     },
     components:{
@@ -126,6 +130,7 @@ export default {
         twiterUserDetails,
         instagramUserDetails,
         linkedinUserDetails,
+        appfooter
     }
 }
 </script>

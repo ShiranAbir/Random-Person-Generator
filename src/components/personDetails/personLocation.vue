@@ -26,7 +26,7 @@
     </div>
     <div class="data-container">
         <div class="title-holder">
-            <h4>PostalCode</h4>
+            <h4>Postal Code</h4>
         </div>
         <div class="data-holder">
             <h2>{{locationDetails.postalCode}}</h2>
@@ -34,13 +34,13 @@
     </div>
     <div class="data-container">
         <div class="title-holder">
-            <h4>Lat</h4>
+            <h4>Latitude</h4>
         </div>
         <div class="data-holder">
             <h2>{{locationDetails.coordinates.lat}}</h2>
         </div>
         <div class="title-holder">
-            <h4>Lng</h4>
+            <h4>Longitude</h4>
         </div>
         <div class="data-holder">
             <h2>{{locationDetails.coordinates.lng}}</h2>

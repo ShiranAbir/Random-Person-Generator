@@ -31,7 +31,7 @@
             <h4>Loan Amount</h4>
         </div>
         <div class="data-holder">
-            <h2>{{financeDetails.loan.loanAmount}}</h2>
+            <h2>{{financeDetails.loan.loanAmoutStr}}</h2>
         </div>
     </div>
     <div class="data-container">

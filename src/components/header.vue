@@ -38,6 +38,10 @@ export default {
             const copyText = JSON.stringify(this.person)
             navigator.clipboard.writeText(copyText)
             alert("Copied the random person!")
+        },
+        saveRandomPerson(){
+            alert("Saved the random person!")
+            this.$emit('saveRandomPerson')
         }
     }
 }
