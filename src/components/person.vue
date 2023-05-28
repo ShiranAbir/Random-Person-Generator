@@ -75,7 +75,13 @@ import twiterUserDetails from './personDetails/personTwiterUserDetails.vue'
 import instagramUserDetails from './personDetails/personInstagramUserDetails.vue'
 import linkedinUserDetails from './personDetails/personLinkedinUserDetails.vue'
 import appfooter from './footer.vue'
+import useStore from '../store/index'
 export default {
+    setup(){
+        const store = useStore()
+
+        return { store }
+    },
     data(){
         return{
             person: null,
@@ -99,13 +105,13 @@ export default {
         }
     },
     created(){
-        this.$store.dispatch({ type: 'loadPerson' })
-        this.person = this.$store.getters.person
+        this.store.loadPerson()
+        this.person = this.store.getPerson
     },
     methods:{
         getRandomPerson(){
-            this.$store.dispatch({ type: 'loadPerson' })
-            this.person = this.$store.getters.person
+            this.store.loadPerson()
+            this.person = this.store.getPerson
         },
         toggleSection(sectionName){
             this.sectionShown[sectionName] = !this.sectionShown[sectionName]
@@ -133,4 +139,7 @@ export default {
         appfooter
     }
 }
+</script>
+<script setup>
+
 </script>

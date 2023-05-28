@@ -1,28 +1,22 @@
-import { createStore } from "vuex"
+import { defineStore } from 'pinia'
 import { getRandomPerson } from 'randomize-person'
 
-const store = createStore({
-    state: {
-        person: null,
-    },
-    mutations: {
-        setPerson(state, { person }) {
-            state.person = person
-        },
-    },
+const useStore = defineStore('person', {
+    state: () => ({
+      person: null,
+    }),
     getters: {
-        person({ person }) {
+        getPerson({ person }) {
             if (!person) return
             return person
         },
     },
     actions: {
-        loadPerson({ commit }) {
+        loadPerson() {
             const person = getRandomPerson()
-            commit({ type: 'setPerson', person })
-            return person
+            this.person = person
         },
     },
 })
 
-export default store
+export default useStore
